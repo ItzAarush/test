@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" id="investment">
+  <defs>
+    <linearGradient xlink:href="#a" id="b" x1="992.183" x2="1019.298" y1="516.081" y2="545.959" gradientTransform="translate(-1522.705 211.343)scale(1.53785)" gradientUnits="userSpaceOnUse"></linearGradient>
+    <linearGradient id="a">
+      <stop offset="0" stop-color="#ff1679"></stop>
+      <stop offset="1" stop-color="#ff770b"></stop>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0 -1004.362)">
+    <rect width="48" height="48" y="1004.362" fill="url(#b)" rx="10.144" ry="10.144"></rect>
+    <path fill="#fff" d="M17.512 1014.34a.5.5 0 0 0-.5.5v5.522H8.5a.5.5 0 0 0-.5.5v16.5c0 2.208 1.793 4 4 4h24c2.207 0 4-1.792 4-4v-16.5a.5.5 0 0 0-.5-.5h-8.525v-5.521a.5.5 0 0 0-.5-.5H17.512zm.5 1h11.963v5.022h-.954v-3.557a.5.5 0 0 0-.5-.5h-9.003a.5.5 0 0 0-.5.5v3.557h-1.006v-5.021zm2.006 1.965h8.003v3.057h-8.003v-3.057zM9 1021.362h30v9H26v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.5H9v-9zm14 9h2v2h-2v-2zm-14 1h13v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1.5h13v6c0 1.67-1.33 3-3 3H12c-1.67 0-3-1.33-3-3v-6z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal"></path>
+  </g>
+</svg>

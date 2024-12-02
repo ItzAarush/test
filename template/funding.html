@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction List</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/topbar.css">
+    <link rel="stylesheet" href="../css/transactionList.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="../img">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="manifest" href="../img/site.webmanifest">
+    <style>
+        td,
+        th {
+            text-align: center !important;
+        }
+
+        td:nth-child(1),
+        th:nth-child(1) {
+            display: flex;
+            justify-content: center;
+        }
+
+        th {
+            background-color: #e8e8e8;
+            font-weight: 600 !important;
+            font-size: 15px !important;
+        }
+
+        tr {
+            border-radius: 15px !important;
+        }
+
+        td {
+            font-weight: 500 !important;
+        }
+
+        td img {
+            cursor: pointer;
+        }
+
+        .walletSpan {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 14px;
+            width: 110px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div>
+                <div class="sidebar-header">
+                    <span class="sidebar-title">ACEPatrons</span>
+                    <button class="burger-btn" id="burger-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 46 46" fill="none">
+                            <rect x="10" y="14" width="26" height="3" rx="1.5" fill="#9490AE" />
+                            <rect x="10" y="22" width="26" height="3" rx="1.5" fill="#9490AE" />
+                            <rect x="10" y="30" width="14" height="3" rx="1.5" fill="#9490AE" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="sidebar-Profile">
+                    <div class="profilePhoto">
+                    </div>
+                    <div class="sidebarProfileName">
+                        Hello! <b>Aarush</b>
+                    </div>
+                </div>
+                <ul class="sidebar-menu">
+                    <li><a href="../template/index.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17.3333 28C17.3333 28.7373 17.9293 29.3333 18.6667 29.3333H22.6667C24.0813 29.3333 25.4373 28.772 26.4373 27.772C27.4373 26.772 28 25.4146 28 24C28 23.2346 28 22.6666 28 22.6666C28 21.9306 27.4027 21.3333 26.6667 21.3333H18.6667C17.9293 21.3333 17.3333 21.9306 17.3333 22.6666V28ZM13.3333 29.3333C14.0693 29.3333 14.6667 28.7373 14.6667 28V14.6666C14.6667 13.9306 14.0693 13.3333 13.3333 13.3333H5.33333C4.596 13.3333 4 13.9306 4 14.6666V24C4 25.4146 4.56133 26.772 5.56133 27.772C6.56133 28.772 7.91867 29.3333 9.33333 29.3333H13.3333ZM25.3333 24H20V26.6666H22.6667C23.3733 26.6666 24.052 26.3866 24.552 25.8866C25.052 25.3866 25.3333 24.708 25.3333 24ZM12 26.6666V16H6.66667V24C6.66667 24.708 6.94666 25.3866 7.448 25.8866C7.948 26.3866 8.62533 26.6666 9.33333 26.6666H12ZM18.6667 2.66663C17.9293 2.66663 17.3333 3.26396 17.3333 3.99996V17.3333C17.3333 18.0706 17.9293 18.6666 18.6667 18.6666H26.6667C27.4027 18.6666 28 18.0706 28 17.3333V7.99996C28 6.58663 27.4373 5.22929 26.4373 4.22929C25.4373 3.22929 24.0813 2.66663 22.6667 2.66663H18.6667ZM20 5.33329V16H25.3333V7.99996C25.3333 7.29329 25.052 6.61462 24.552 6.11462C24.052 5.61462 23.3733 5.33329 22.6667 5.33329H20ZM14.6667 3.99996C14.6667 3.26396 14.0693 2.66663 13.3333 2.66663H9.33333C7.91867 2.66663 6.56133 3.22929 5.56133 4.22929C4.56133 5.22929 4 6.58663 4 7.99996V9.33329C4 10.0706 4.596 10.6666 5.33333 10.6666H13.3333C14.0693 10.6666 14.6667 10.0706 14.6667 9.33329V3.99996ZM12 5.33329H9.33333C8.62533 5.33329 7.948 5.61462 7.448 6.11462C6.94666 6.61462 6.66667 7.29329 6.66667 7.99996H12V5.33329Z" />
+                            </svg>
+                            <span>Dashboard</span>
+                        </a></li>
+                    <li><a href="../template/transaction.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M18.8026 23.4947C21.8373 22.3587 24.0013 19.4294 24.0013 16C24.0013 13.792 23.1039 11.792 21.6559 10.344C21.1359 9.82403 21.1359 8.97871 21.6559 8.45871C22.1773 7.93871 23.0213 7.93871 23.5426 8.45871C25.4733 10.3894 26.6679 13.056 26.6679 16C26.6679 20.644 23.6933 24.5987 19.5466 26.0614L20.7613 26.904C21.3653 27.324 21.5159 28.1547 21.0959 28.76C20.6773 29.364 19.8453 29.5147 19.2413 29.0947L15.2413 26.32C14.6386 25.9027 14.4866 25.076 14.9013 24.4707L17.5679 20.58C17.9839 19.972 18.8146 19.8174 19.4213 20.2334C20.0279 20.6494 20.1826 21.48 19.7666 22.0867L18.8026 23.4947ZM12.4866 5.92671L11.2613 5.10937C10.6493 4.70137 10.4826 3.87203 10.8906 3.26003C11.2999 2.64803 12.1279 2.4827 12.7399 2.8907L16.7399 5.55737C17.3533 5.96537 17.5186 6.79338 17.1106 7.40671L14.4439 11.4067C14.0346 12.0187 13.2066 12.184 12.5946 11.776C11.9826 11.368 11.8159 10.5387 12.2239 9.92671L13.1639 8.51871C10.1466 9.66404 8.00126 12.5827 8.00126 16C8.00126 18.208 8.89726 20.2067 10.3453 21.656C10.8653 22.176 10.8653 23.02 10.3453 23.5414C9.82526 24.0614 8.97993 24.0614 8.45993 23.5414C6.52926 21.6107 5.33459 18.944 5.33459 16C5.33459 11.344 8.32393 7.38004 12.4866 5.92671Z" />
+                            </svg>
+                            <span>Transaction</span>
+                        </a></li>
+                    <li><a href="funding.html" class="active">
+                            <ion-icon class="logout-sidebar" name="wallet-outline"></ion-icon>
+                            <span>Funding</span>
+                        </a></li>
+                    <li><a href="billing.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"
+                                fill="none">
+                                <g clip-path="url(#clip0_8_71)">
+                                    <path
+                                        d="M12.6667 10.862H17.3334V8.19531H14.6667V6.862H12V8.26331C10.48 8.57262 9.33331 9.91931 9.33331 11.5286C9.33331 13.3659 10.8293 14.8619 12.6666 14.8619H14C14.368 14.8619 14.6667 15.1606 14.6667 15.5286C14.6667 15.8966 14.368 16.1953 14 16.1953H9.33331V18.862H12V20.1953H14.6667V18.794C16.1867 18.4847 17.3334 17.1367 17.3334 15.5287C17.3334 13.6914 15.8387 12.1954 14.0001 12.1954H12.6667C12.3001 12.1954 12.0001 11.8967 12.0001 11.5287C12.0001 11.1607 12.3 10.862 12.6667 10.862Z" />
+                                    <path
+                                        d="M12.0813 24.1153C6.788 23.4926 2.66663 18.986 2.66663 13.5286C2.66663 7.64731 7.45194 2.86194 13.3333 2.86194C19.2147 2.86194 24 7.64731 24 13.5287C24 13.9807 23.9627 14.4247 23.908 14.862H26.6C26.6427 14.4233 26.6667 13.9793 26.6667 13.5287C26.6667 6.17669 20.6867 0.195374 13.3334 0.195374C5.98131 0.195311 0 6.17669 0 13.5287C0 19.6647 4.16931 24.83 9.81869 26.3767L12.0813 24.1153Z" />
+                                    <path
+                                        d="M24 17.5287V20.1954H27.448L22.6667 24.9767L19.6094 21.9194C19.0881 21.3981 18.2454 21.3981 17.7241 21.9194L9.72406 29.9194L11.6094 31.8047L18.6667 24.7474L21.724 27.8034C22.2453 28.3247 23.088 28.3247 23.6093 27.8034L29.3333 22.0807V25.5287H32V17.5287H24Z" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_8_71">
+                                        <rect width="32" height="32" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span>Billing</span>
+                        </a></li>
+                    <li><a href="../template/profile.html">
+                            <ion-icon class="logout-sidebar" id="setting-Icon" name="settings-outline"></ion-icon>
+                            <span>Profile</span>
+                        </a></li>
+                    <li><a href="../template/taxation.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.00002 29.3333H28C28.736 29.3333 29.3334 28.736 29.3334 28C29.3334 27.264 28.736 26.6666 28 26.6666H4.00002C3.26402 26.6666 2.66669 27.264 2.66669 28C2.66669 28.736 3.26402 29.3333 4.00002 29.3333ZM9.33335 14.6666H8.48802C6.74535 14.6666 5.33335 13.2546 5.33335 11.512C5.33335 11.5106 5.33335 11.5106 5.33335 11.5093C5.33335 10.5493 5.79602 9.64929 6.57735 9.09196C8.73202 7.55329 15.2254 2.91463 15.2254 2.91463C15.688 2.58396 16.312 2.58396 16.7747 2.91463C16.7747 2.91463 23.268 7.55329 25.4227 9.09196C26.204 9.64929 26.6667 10.5493 26.6667 11.5093V11.512C26.6667 13.2546 25.2547 14.6666 23.512 14.6666H22.6667V21.3333H25.3334C26.0694 21.3333 26.6667 21.9306 26.6667 22.6666C26.6667 23.4026 26.0694 24 25.3334 24H6.66669C5.93069 24 5.33335 23.4026 5.33335 22.6666C5.33335 21.9306 5.93069 21.3333 6.66669 21.3333H9.33335V14.6666ZM12 14.6666V21.3333H14.6667V14.6666H12ZM17.3334 14.6666V21.3333H20V14.6666H17.3334ZM16 5.63863L8.12669 11.2613C8.04802 11.3186 8.00002 11.4106 8.00002 11.5093V11.512C8.00002 11.7813 8.21869 12 8.48802 12H23.512C23.7814 12 24 11.7813 24 11.512V11.5093C24 11.4106 23.952 11.3186 23.8734 11.2613L16 5.63863Z" />
+                            </svg>
+                            <span>Taxation</span>
+                        </a></li>
+                    <li><a href="#">
+                            <ion-icon class="logout-sidebar" style="color: red;" name="log-out-outline"></ion-icon>
+                            <span style="color: red;">Logout</span>
+                        </a></li>
+
+                </ul>
+                <span class="copyright">AcePatrons Consulting LLC
+                    © 2024 All Rights Reserved</span>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar">
+                <span class="search-bar-holder">
+                    <input type="text" class="search-bar" placeholder="Find something here...">
+                    <ion-icon name="search-outline"></ion-icon>
+                </span>
+                <span class="topbar-options">
+                    <ion-icon id="bell-icon" name="notifications-outline"></ion-icon>
+                    <ion-icon id="refresh-Icon" name="refresh-outline"></ion-icon>
+                    <ion-icon id="setting-Icon" name="settings-outline"></ion-icon>
+                    <ion-icon class="logout" name="log-out-outline"></ion-icon>
+                </span>
+            </header>
+
+            <!-- Page Content -->
+            <div class="content">
+                <div class="recentActivitiesBoxes">
+                    <div class="recentActivities">
+                        <div style="display: flex; justify-content: space-between;">
+                            <h1 class="mainHead">Funds Transfer Activity</h1>
+                            
+
+                        </div>
+                        <div class="recentActivities transferActivities">
+
+                            <div class="activitiesTable">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Activity</th>
+                                            <th>Time</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="walletSpan">
+                                                    <img class="coinImg" src="../img/topup.svg" alt="Buy Icon">
+                                                    <span>Topup</span>
+                                                </span>
+                                            </td>
+                                            <td>05:46 PM</td>
+                                            <td style="color: green;">+$10,000</td>
+                                            <td><span class="completed">Completed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="walletSpan">
+                                                    <img class="coinImg" src="../img/withdraw.svg" alt="Ethereum">
+                                                    <span>Withdraw</span>
+                                                </span>
+                                            </td>
+                                            <td>04:18 PM</td>
+                                            <td style="color: red;">-$5,000</td>
+                                            <td><span class="pending">Pending</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="walletSpan">
+                                                    <img class="coinImg" src="../img/withdraw.svg" alt="Monero">
+                                                    <span>Withdraw</span>
+                                                </span>
+                                            </td>
+                                            <td>04:01 PM</td>
+                                            <td style="color: red;">-$1000</td>
+                                            <td><span class="cancelled">Cancelled</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="walletSpan">
+                                                    <img class="coinImg" src="../img/topup.svg" alt="Litecoin">
+                                                    <span>Topup</span>
+                                                </span>
+                                            </td>
+                                            <td>01:59 PM</td>
+                                            <td style="color: green;">+$12,300</td>
+                                            <td><span class="completed">Completed</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- <script src="../js/dashboard.js"></script> -->
+    <script src="../js/transaction.js"></script>
+</body>
+
+</html>
